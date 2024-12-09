@@ -11,7 +11,7 @@ def index():
 def cpu():
     cpu_percent = psutil.cpu_percent(interval=1)
     cpu_freq = psutil.cpu_freq()
-    cpu_count = psutil.cpu_count()
+    cpu_count = psutil.cpu_count(logical=False)
     cpu_count_logical = psutil.cpu_count(logical=True)
     return render_template('cpu.html', cpu_percent=cpu_percent, cpu_freq=cpu_freq, cpu_count=cpu_count, cpu_count_logical=cpu_count_logical)
 
