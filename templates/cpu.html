@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}CPU Resources{% endblock %}
+
+{% block content %}
+    <h2>CPU Resources</h2>
+    <p>Logical Cores: {{ cpu_count_logical }}</p>
+    <p>Physical Cores: {{ cpu_count }}</p>
+    <p>Current CPU Usage: {{ cpu_percent }}%</p>
+    <p>Current CPU Frequency: {{ cpu_freq.current }} MHz</p>
+    <p>Min CPU Frequency: {{ cpu_freq.min }} MHz</p>
+    <p>Max CPU Frequency: {{ cpu_freq.max }} MHz</p>
+{% endblock %}
