@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Network Resources{% endblock %}
+
+{% block content %}
+    <h2>Network Resources</h2>
+    <p>Network Counters: {{ net_io_counters }}</p>
+    <p>Network interface addresses: {{ net_if_addrs }}</p>
+    {% endblock %}
+
+return render_template
+ 

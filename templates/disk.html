@@ -1,0 +1,8 @@
+{% block title %}Disk Resources{% endblock %}
+
+{% block content %}
+    <h2>Disk Resources</h2>
+    <p>Disk Partitions: {{ disk_partitions }}</p>
+    <p>Disk pct in use: {{ disk_usage.percent }}</p>
+    {% endblock %}
+

@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 import psutil
-# may get diff args w/Nix vs Win or Macos
+# may get diff args w/Nix v Win or Macos.
 
 app = Flask(__name__)
 
