@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Memory Resources{% endblock %}
+
+{% block content %}
+    <h2>Memory Resources</h2>
+    <p>Virtual Memory: {{ virtual_memory }}</p>
+    <p>Swap Memory: {{ swap_memory }}</p>
+    <p>Memory pct in use: {{ virtual_memory.percent }}</p>
+    <p>Swap pct in use: {{ swap_memory.percent }}</p>
+{% endblock %}
