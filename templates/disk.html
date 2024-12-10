@@ -1,8 +1,15 @@
+{% extends "base.html" %}
+
 {% block title %}Disk Resources{% endblock %}
 
 {% block content %}
     <h2>Disk Resources</h2>
-    <p>Disk Partitions: {{ disk_partitions }}</p>
+    {% for partition in disk_partitions %}
+    <p>Device: {{ partition.device }}</p>
+    <p>File System Type: {{ partition.fstype }}</p>
+    <hr>
+{% endfor %}
+    
     <p>Disk pct in use: {{ disk_usage.percent }}</p>
-    {% endblock %}
+{% endblock %}
 
