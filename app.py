@@ -39,14 +39,20 @@ def process():
     process_list = psutil.pids()
     processes = []
     for pid in process_list:
-        p = psutil.Process(pid)
-        processes.append({
-            'pid': p.pid,
-            'name': p.name(),
-            'status': p.status(),
-            'started': p.create_time(),
-            'cmdline': p.cmdline()
-        })
+       p = psutil.Process(pid)
+       try:     
+           processes.append({
+           'pid': p.pid,
+           'name': p.name(),
+           'status': p.status(),
+           'started': p.create_time(),
+           'cmdline': p.cmdline()
+       })
+       except Exception as e:
+            processes.append({
+            'pid':p.pid,
+            'error':e
+            })
     return render_template('process.html', processes=processes)
 
 if __name__ == '__main__':
